@@ -1,9 +1,9 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
-import { Menu } from '../../common/menu/Menu';
+import { MenuContainer } from '../../common/menu/MenuContainer';
 
 const Navbar = () => {
   return (
-    <AppBar position='static' sx={{ backgroundColor: 'black', padding: '6px' }}>
+    <AppBar position='static' sx={{ backgroundColor: 'black', padding: {xs: '6px', sm: '0px'} }}>
       <Toolbar
         sx={{
           display: 'flex',
@@ -17,8 +17,9 @@ const Navbar = () => {
             padding: '6px 8px'
           }}>
           E-commerce
+          {/* logo */}
         </Typography>
-        <Menu />
+        <MenuContainer />
       </Toolbar>
     </AppBar>
   );

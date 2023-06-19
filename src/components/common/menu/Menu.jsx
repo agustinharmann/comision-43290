@@ -1,9 +1,7 @@
 import { Box, Button } from '@mui/material';
-import { CartWidget } from '../cartWidget/CartWidget';
+import { CartWidgetContainer } from '../cartWidget/CartWidgetContainer';
 
-const Menu = () => {
-
-  const itemsMenu = ['Inicio', 'Productos', 'Acerca de'];
+const Menu = ({ itemsMenu }) => {
 
   return (
     <Box
@@ -18,8 +16,7 @@ const Menu = () => {
           <Button color='inherit' key={i}>{item}</Button>
         ))
       }
-      hacer componetnes contenedores
-      <CartWidget />
+      <CartWidgetContainer />
     </Box>
   );
 };
