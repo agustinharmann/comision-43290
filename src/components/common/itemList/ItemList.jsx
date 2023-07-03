@@ -15,6 +15,7 @@ const ItemList = ({ greeting }) => {
 
   return (
     <Card sx={{ maxWidth: 300, border: '1px solid #DDDDDD', background: '#1A2027' }}>
+      {/* maxheader */}
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label='recipe'>
