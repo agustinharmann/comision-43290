@@ -3,7 +3,7 @@ import { BsCart2 } from 'react-icons/bs'
 
 const CartWidget = () => {
   return (
-    <Box sx={{ padding: '6px 8px', cursor: 'pointer' }}>
+    <Box sx={{ margin: '0px 10px', cursor: 'pointer' }}>
       <Badge badgeContent={4} color='primary'>
         <BsCart2 size={'24px'} />
       </Badge>

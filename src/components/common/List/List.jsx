@@ -1,8 +1,15 @@
-import { ItemListContainer } from '../itemList/ItemListContainer';
+import { categories } from '../../../categoriesMock.js';
 
 const List = () => {
+  console.log(categories);
   return (
-    <ItemListContainer />
+    <>
+      {/* {categories.map(() => {
+        return (
+          <ItemListContainer />
+        )
+      })} */}
+    </>
   );
 };
 

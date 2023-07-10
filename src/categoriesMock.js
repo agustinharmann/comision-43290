@@ -1,48 +1,48 @@
-export const products = [
+export const categories = [
   {
-    'name-category': 'Promociones',
+    'title': 'Promociones',
     'products-category': [
       {}
     ]
   },
   {
-    'name-category': 'Vinos',
+    'title': 'Vinos',
     'products-category': []
   },
   {
-    'name-category': 'ESPUMANTES',
+    'title': 'Espumantes',
     'products-category': []
   },
   {
-    'name-category': 'Whiskies',
+    'title': 'Whiskies',
     'products-category': []
   },
   {
-    'name-category': 'Gin',
+    'title': 'Gin',
     'products-category': []
   },
   {
-    'name-category': 'Licores',
+    'title': 'Licores',
     'products-category': []
   },
   {
-    'name-category': 'Vodka',
+    'title': 'Vodka',
     'products-category': []
   },
   {
-    'name-category': 'Ron',
+    'title': 'Ron',
     'products-category': []
   },
   {
-    'name-category': 'Aperitivos',
+    'title': 'Aperitivos',
     'products-category': []
   },
   {
-    'name-category': 'Cerveza',
+    'title': 'Cerveza',
     'products-category': []
   },
   {
-    'name-category': 'Accesorios',
+    'title': 'Accesorios',
     'products-category': []
   }
 ]
