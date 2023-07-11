@@ -11,7 +11,9 @@ import { red } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { BsCart2 } from 'react-icons/bs';
 
-const ProductCard = ({ greeting }) => {
+const ProductCard = ({ greeting, item }) => {
+
+  console.log(greeting);
 
   return (
     <Card sx={{ maxWidth: 300, border: '1px solid #DDDDDD', background: '#1A2027' }}>
@@ -22,8 +24,7 @@ const ProductCard = ({ greeting }) => {
             C
           </Avatar>
         }
-        title={greeting}
-        // title={title}
+        title={item.title}
         action={
           <IconButton aria-label='settings' sx={{ color: '#FFFFFF' }}>
             <MoreVertIcon />
@@ -38,11 +39,11 @@ const ProductCard = ({ greeting }) => {
         image='https://res.cloudinary.com/drxn0evox/image/upload/v1687203114/samples/ecommerce/accessories-bag.jpg'
         // image={img}
         alt='Paella dish'
-      // alt={title}
+      // alt={item.title}
       />
       <CardContent>
         <Typography variant='body2' color='#FFFFFF' overflow='auto' maxHeight='100px' padding='0px 10px'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias consequatur molestiae quaerat id saepe eius quam enim possimus voluptas nobis nemo dignissimos aspernatur, est facere veniam, vel consequuntur tenetur. Consequuntur.
+          {item.description}
         </Typography>
         {/* {descripton} */}
       </CardContent>
