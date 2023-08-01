@@ -2,11 +2,11 @@ import { Button } from '@mui/material';
 
 const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <div style={{ display: 'flex' }}>
+    <div>
+      <div style={{ display: "flex" }}>
         <Button
           disabled={counter <= 1}
-          variant='contained'
+          variant="contained"
           onClick={() => setCounter(counter - 1)}
         >
           -
@@ -14,7 +14,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
         <h2>{counter}</h2>
         <Button
           disabled={counter >= stock}
-          variant='contained'
+          variant="contained"
           onClick={() => setCounter(counter + 1)}
         >
           +
@@ -22,8 +22,8 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
       </div>
       <br />
       <Button
-        variant='contained'
-        color='secondary'
+        variant="contained"
+        color="secondary"
         onClick={() => agregarAlCarrito(counter)}
       >
         Agregar al carrito
@@ -32,4 +32,4 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
   );
 };
 
-export default Counter;
+export { Counter };

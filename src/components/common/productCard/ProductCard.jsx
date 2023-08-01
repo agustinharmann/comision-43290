@@ -4,13 +4,10 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { BsCart2 } from 'react-icons/bs';
-import { Box, Button } from '@mui/material';
+import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ greeting, item }) => {
@@ -78,7 +75,6 @@ const ProductCard = ({ greeting, item }) => {
         sx={{
           justifyContent: 'space-between'
         }}
-      // disableSpacin
       >
         <IconButton
           aria-label='add to cart'

@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { ItemDetail } from './ItemDetail';
 import { useEffect, useState } from 'react';
 import { products } from '../../../productsMock';
+import { ItemDetail } from './ItemDetail';
 
 const ItemDetailContainer = () => {
 
@@ -9,6 +9,8 @@ const ItemDetailContainer = () => {
 
   const { id } = useParams();
   // console.log(id);
+
+  //MODIFICAR CUANDO USE FIRE
 
   useEffect(() => {
 
@@ -29,7 +31,10 @@ const ItemDetailContainer = () => {
     console.log(data);
   };
 
-  return <ItemDetail product={product} agregarAlCarrito={agregarAlCarrito} />;
+  return <ItemDetail
+    product={product}
+    agregarAlCarrito={agregarAlCarrito}
+  />;
 };
 
 export { ItemDetailContainer };

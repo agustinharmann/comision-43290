@@ -12,7 +12,7 @@ const Navbar = () => {
           flexDirection: { xs: 'column', sm: 'row' },
           justifyContent: { xs: 'center', sm: 'space-between' }
         }}>
-        <Link to="/">
+        <Link to='/'>
           <Typography variant='h6' component='div'
             sx={{
               width: 'auto',

@@ -2,11 +2,11 @@ import { ProductCard } from './ProductCard';
 
 const ProductCardContainer = ({item}) => {
 
-  const greeting = 'greeting'
+  // const greeting = 'greeting'
 
   return (
     <ProductCard
-      greeting={greeting}
+      // greeting={greeting}
       item={item}
     />
   );

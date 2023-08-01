@@ -1,12 +1,12 @@
-import { Box, Button, Card, CardMedia, Typography } from "@mui/material";
-import CounterContainer from "../../common/counter/CounterContainer";
+import { Box, Card, CardMedia, Typography } from "@mui/material";
+import { CounterContainer } from '../../../components/common/counter/CounterContainer';
 
 const ItemDetail = ({ product, agregarAlCarrito }) => {
 
   const { title, category, image, price, stock, description } = product;
 
   return (
-    <div>
+    <>
       <Card>
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '16px' }}>
           <Typography variant="h4" gutterBottom>
@@ -28,8 +28,11 @@ const ItemDetail = ({ product, agregarAlCarrito }) => {
         </Box>
       </Card>
 
-      <CounterContainer stock={product.stock} agregarAlCarrito={agregarAlCarrito} />
-    </div>
+      <CounterContainer
+        stock={product.stock}
+        agregarAlCarrito={agregarAlCarrito}
+      />
+    </>
   );
 };
 

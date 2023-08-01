@@ -14,6 +14,10 @@ export const categories = [
   {
     'title': 'Licores',
   },
+  ,
+  {
+    'title': 'MockVcío',
+  },
   // {
   //   'title': 'Promociones',
   //   'products-category': [
