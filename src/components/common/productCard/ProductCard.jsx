@@ -1,14 +1,9 @@
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { BsCart2 } from 'react-icons/bs';
-import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { Card, CardHeader, CardMedia, CardContent, CardActions } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import { Button } from '@mui/material';
+import { BsCart2 } from 'react-icons/bs';
 
 const ProductCard = ({ greeting, item }) => {
 
@@ -73,27 +68,14 @@ const ProductCard = ({ greeting, item }) => {
 
       <CardActions
         sx={{
-          justifyContent: 'space-between'
+          justifyContent: 'flex-end'
         }}
       >
-        <IconButton
-          aria-label='add to cart'
-          sx={{
-            background: '#FFFFFF',
-            color: '#000000',
-            '&:hover': {
-              background: '#5E5E5E',
-              color: '#CCCCCC'
-            }
-          }}>
-          {/* mas adelante ternario para que si está en el carrito sea de otro color */}
-          <BsCart2 size={'20px'} />
-        </IconButton>
-        <Button variant="contained">
-          <Link to={`/itemDetail/${item.id}`}>
+        <Link to={`/itemDetail/${item.id}`}>
+          <Button variant="contained" sx={{display: 'flex', alignItems: 'center'}}>
             Ver más
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </CardActions>
 
     </Card>

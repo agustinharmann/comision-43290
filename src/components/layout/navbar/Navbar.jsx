@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { MenuContainer } from '../../common/menu/MenuContainer';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (

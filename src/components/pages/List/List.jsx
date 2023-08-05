@@ -1,5 +1,5 @@
-import { ProductCardContainer } from '../../common/productCard/ProductCardContainer';
 import { Box, Skeleton, Stack } from '@mui/material';
+import { ProductCardContainer } from '../../common/productCard/ProductCardContainer';
 
 const List = ({ items }) => {
 

@@ -1,9 +1,13 @@
-import { UserWidget } from './UserWidget';
+import { Box } from '@mui/material';
+import { Userwidget } from './Userwidget';
 
-const UserWidgetConatiner = () => {
+
+const UserwidgetContainer = () => {
   return (
-    <UserWidget />
+    <Box>
+      <Userwidget />
+    </Box>
   );
 };
 
-export { UserWidgetConatiner };
+export { UserwidgetContainer };

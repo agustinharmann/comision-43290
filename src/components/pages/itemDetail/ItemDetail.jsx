@@ -1,7 +1,7 @@
 import { Box, Card, CardMedia, Typography } from "@mui/material";
 import { CounterContainer } from '../../../components/common/counter/CounterContainer';
 
-const ItemDetail = ({ product, agregarAlCarrito }) => {
+const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
 
   const { title, category, image, price, stock, description } = product;
 
@@ -29,6 +29,7 @@ const ItemDetail = ({ product, agregarAlCarrito }) => {
       </Card>
 
       <CounterContainer
+        cantidadEnCarrito={cantidadEnCarrito}
         stock={product.stock}
         agregarAlCarrito={agregarAlCarrito}
       />
