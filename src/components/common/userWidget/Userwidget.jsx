@@ -54,7 +54,8 @@ const Userwidget = () => {
             right: '10px',
             background: '#1B1B1D',
             margin: '0px',
-            borderRadius: '5px'
+            borderRadius: '5px',
+            zIndex: '10'
           }}
           onClick={handleDropMenu}
         >

@@ -14,8 +14,4 @@ export const categories = [
   {
     'title': 'Licores',
   },
-  ,
-  {
-    'title': 'MockVcío',
-  },
 ]

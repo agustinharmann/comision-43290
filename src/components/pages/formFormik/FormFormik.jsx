@@ -52,14 +52,22 @@ const FormFormik = () => {
   });
 
   return (
-    <div style={{ padding: "40px" }}>
+    <div
+      style={{
+        minHeight: '80vh',
+        padding: '0px 40px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       {
         !orderId ? <form
           style={{
-            maxWidth: '600px',
+            width: '100%',
+            maxWidth: '400px',
             display: 'flex',
             flexDirection: 'column',
-            border: '1px solid red'
           }}
           onSubmit={handleSubmit}
 
@@ -74,6 +82,9 @@ const FormFormik = () => {
           />
 
           <TextField
+            sx={{
+              margin: "10px 0px"
+            }}
             type="text"
             label="Email"
             variant="outlined"
@@ -91,14 +102,18 @@ const FormFormik = () => {
             error={errors.password ? true : false}
             helperText={errors.password}
           />
+          <Button type="button" onClick={() => setShowPassword(!showPassword)}>
+            Mostrar/ocultar
+          </Button>
 
-          <Button type="submit" variant="contained">
+          <Button
+            sx={{
+              margin: "20px 0px"
+            }}
+            type="submit" variant="contained">
             Enviar
           </Button>
 
-          <button type="button" onClick={() => setShowPassword(!showPassword)}>
-            Mostrar/ocultar
-          </button>
         </form> : <h1>la orden es {orderId}</h1>
       }
     </div>
