@@ -1,8 +1,15 @@
-import { Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
   return (
-    <div>
+    <Box
+      sx={{
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
       <div style={{ display: "flex" }}>
         <Button
           disabled={counter <= 1}
@@ -28,7 +35,7 @@ const Counter = ({ counter, setCounter, agregarAlCarrito, stock }) => {
       >
         Agregar al carrito
       </Button>
-    </div>
+    </Box>
   );
 };
 

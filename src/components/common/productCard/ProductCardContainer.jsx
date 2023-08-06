@@ -1,12 +1,9 @@
 import { ProductCard } from './ProductCard';
 
-const ProductCardContainer = ({item}) => {
-
-  // const greeting = 'greeting'
+const ProductCardContainer = ({ item }) => {
 
   return (
     <ProductCard
-      // greeting={greeting}
       item={item}
     />
   );

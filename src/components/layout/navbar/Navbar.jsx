@@ -19,7 +19,6 @@ const Navbar = () => {
               padding: '6px 8px'
             }}>
             E-commerce
-            {/* logo */}
           </Typography>
         </Link>
         <MenuContainer />

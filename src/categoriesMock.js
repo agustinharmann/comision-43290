@@ -18,25 +18,4 @@ export const categories = [
   {
     'title': 'MockVcío',
   },
-  // {
-  //   'title': 'Promociones',
-  //   'products-category': [
-  //     {}
-  //   ]
-  // },
-  // {
-  //   'title': 'Espumantes',
-  // },
-  // {
-  //   'title': 'Vodka',
-  // },
-  // {
-  //   'title': 'Ron',
-  // },
-  // // {
-  // //   'title': 'Aperitivos',
-  // // },
-  // {
-  //   'title': 'Accesorios',
-  // }
 ]

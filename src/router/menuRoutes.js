@@ -2,11 +2,7 @@ import { ListContainer } from '../components/pages/List/ListContainer'
 import { ItemDetailContainer } from '../components/pages/itemDetail/ItemDetailContainer'
 import { CartContainer } from '../components/pages/cart/CartContainer'
 import { CheckoutContainer } from '../components/pages/checkout/CheckoutContainer';
-import { Dashboard } from '../components/pages/dashboard/Dashboard';
-// import CartContainer from "../components/pages/cart/CartContainer";
-// import CheckoutContainer from "../components/pages/checkout/CheckoutContainer";
-// import FormFormik from "../components/pages/formFormik/FormFormik";
-// import Dashboard from "../components/pages/dashboard/Dashboard";
+import { FormFormik } from '../components/pages/formFormik/FormFormik';
 
 export const routes = [
   {
@@ -34,9 +30,9 @@ export const routes = [
     path: "/checkout",
     Element: CheckoutContainer,
   },
-  // {
-  //   id: "formik",
-  //   path: "/formik",
-  //   Element: FormFormik,
-  // },
+  {
+    id: "formik",
+    path: "/formik",
+    Element: FormFormik,
+  },
 ];

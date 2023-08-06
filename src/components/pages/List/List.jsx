@@ -4,18 +4,17 @@ import { ProductCardContainer } from '../../common/productCard/ProductCardContai
 const List = ({ items }) => {
 
   let arr = [1, 2, 3, 4];
-  // mockeado
 
   return (
     <Box
       sx={{
+        minHeight: '100vh',
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap',
       }}
     >
-      {/* MEZCLAR CON CONDICIONAL DE ISLOADING PEEEEEEEEERO PARA DOS COSAS, ESTO YYYYYYYY EN CADA CARD Y EN CADA ITEMDETAIL */}
       {items.length > 0
         ? items.map((item) => {
           return (
@@ -30,7 +29,6 @@ const List = ({ items }) => {
           </Stack>
         ))
       }
-
     </Box>
   );
 };

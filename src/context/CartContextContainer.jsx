@@ -55,7 +55,6 @@ const CartContextContainer = ({ children }) => {
 
     let producto = cart.find((elemento) => elemento.id === +id)
 
-    // return producto ? producto.quantity : producto
     return producto?.quantity
   }
 

@@ -5,14 +5,13 @@ import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import { BsCart2 } from 'react-icons/bs';
 
-const ProductCard = ({ greeting, item }) => {
-
-  // console.log(greeting);
+const ProductCard = ({ item }) => {
 
   return (
     <Card
       sx={{
         maxWidth: 300,
+        maxHeight: 435,
         margin: '5px',
         background: '#1A2027',
       }}>

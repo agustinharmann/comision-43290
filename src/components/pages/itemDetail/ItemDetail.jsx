@@ -7,7 +7,9 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
 
   return (
     <>
-      <Card>
+      <Card sx={{
+        boxShadow: 'none'
+      }}>
         <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '16px' }}>
           <Typography variant="h4" gutterBottom>
             {title}
@@ -23,7 +25,7 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
             {description}
           </Typography>
           <Typography variant="body2" color="textSecondary">
-            Stock: {stock} units
+            <strong>Stock</strong>: {stock} units
           </Typography>
         </Box>
       </Card>
