@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { List } from './List';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { List } from './List';
 // import { products } from '../../../productsMock';
 
 import { db } from '../../../firebaseConfig';
@@ -23,7 +23,7 @@ const ListContainer = () => {
       consulta = productsCollection
     } else {
       consulta = query(productsCollection, where('category', '==', categoryName))
-    }
+    };
 
     getDocs(consulta).then((res) => {
       console.log(res.docs);
@@ -50,7 +50,12 @@ const ListContainer = () => {
   }, [categoryName]);
 
   return (
-    <List items={items} />
+    <List
+      sx={{
+        border: '1px solid green'
+      }}
+      items={items}
+    />
   );
 };
 

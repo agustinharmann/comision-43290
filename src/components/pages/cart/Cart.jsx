@@ -2,27 +2,27 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { CartContext } from '../../../context/CartContextContainer';
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 
 const Cart = () => {
 
   const { cart, clearCart, deleteById, getTotalPrice } = useContext(CartContext);
 
   let limpiar = () => {
-    // Swal.fire({
-    //   title: "seguro quieres eliminar todo ?",
-    //   showDenyButton: true,
-    //   showCancelButton: false,
-    //   confirmButtonText: "si, limpiar",
-    //   denyButtonText: `No, no limpiar`,
-    // }).then((result) => {
-    //   if (result.isConfirmed) {
-    //     clearCart();
-    //     Swal.fire("Carrito eliminado con exito", "", "success");
-    //   } else if (result.isDenied) {
-    //     Swal.fire("El carrito queda como estaba", "", "info");
-    //   }
-    // });
+    Swal.fire({
+      title: "seguro quieres eliminar todo ?",
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "si, limpiar",
+      denyButtonText: `No, no limpiar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clearCart();
+        Swal.fire("Carrito eliminado con exito", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("El carrito queda como estaba", "", "info");
+      }
+    });
   };
 
   let total = getTotalPrice();

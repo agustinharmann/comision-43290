@@ -12,7 +12,7 @@ const List = ({ items }) => {
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
       }}
     >
       {/* MEZCLAR CON CONDICIONAL DE ISLOADING PEEEEEEEEERO PARA DOS COSAS, ESTO YYYYYYYY EN CADA CARD Y EN CADA ITEMDETAIL */}
