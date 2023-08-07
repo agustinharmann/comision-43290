@@ -7,10 +7,11 @@ import { Link } from 'react-router-dom'
 const Dashboard = () => {
 
   const rellenar = () => {
-    let refCollection = collection(db, 'products')
-    products.forEach((prod) => {
-      addDoc(refCollection, prod)
-    });
+    // let refCollection = collection(db, 'products')
+    // products.forEach((prod) => {
+    //   addDoc(refCollection, prod)
+    // });
+    console.log('Desabilitado, me vas a llenar la base de datos ;)');
   };
 
   return (
@@ -34,6 +35,7 @@ const Dashboard = () => {
       <Button
         variant='contained'
         onClick={rellenar}
+        disabled
       >
         Rellenar base de datos
       </Button>
