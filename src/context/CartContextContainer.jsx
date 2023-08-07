@@ -4,7 +4,7 @@ const CartContext = createContext();
 
 const CartContextContainer = ({ children }) => {
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
   const addToCart = (product) => {
     let existe = cart.some((elemento) => elemento.id === product.id);
@@ -20,18 +20,24 @@ const CartContextContainer = ({ children }) => {
         }
       });
 
+      localStorage.setItem("cart", JSON.stringify(newArr))
+      setCart(newArr);
+
       setCart(newArr);
     } else {
+      localStorage.setItem("cart", JSON.stringify([...cart, product]))
       setCart([...cart, product]);
     }
   };
 
   const clearCart = () => {
+    localStorage.removeItem("cart")
     setCart([]);
   };
 
   const deleteById = (id) => {
     let newArr = cart.filter((elemento) => elemento.id !== id);
+    localStorage.setItem("cart", JSON.stringify(newArr))
     setCart(newArr);
   };
 

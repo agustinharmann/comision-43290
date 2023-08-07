@@ -47,7 +47,7 @@ const Cart = () => {
       <Box
         sx={{
           width: '90%',
-          minHeight: '100vh',
+          minHeight: '60vh',
           display: 'flex',
           flexWrap: 'wrap'
         }}
