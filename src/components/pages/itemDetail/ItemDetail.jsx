@@ -11,8 +11,7 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
         <Box>
           <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '16px' }}>
             <Typography variant="h4" gutterBottom>
-              nombre
-              {/* {product?.title} */}
+              { product.title ? product.title : <p>cargando...</p> }
             </Typography>
             <Typography variant="subtitle1" color="textSecondary" gutterBottom>
               {/* Category: {product?.category} */}
