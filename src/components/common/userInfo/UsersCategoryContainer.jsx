@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { UserwidgetContainer } from '../userWidget/UserWidgetContainer';
+import { UserwidgetContainer } from '../userCategories/UserWidgetContainer';
 import { ProfileWidgetConatiner } from '../profileWidget/ProfileWidgetContainer';
 
 const User = () => {

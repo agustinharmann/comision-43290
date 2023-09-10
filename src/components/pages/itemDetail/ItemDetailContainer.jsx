@@ -33,7 +33,6 @@ const ItemDetailContainer = () => {
       ...product,
       quantity: cantidad,
     };
-    console.log(data);
 
     addToCart(data);
 

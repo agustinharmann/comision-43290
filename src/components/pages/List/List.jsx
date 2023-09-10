@@ -8,7 +8,7 @@ const List = ({ items }) => {
   return (
     <Box
       sx={{
-        minHeight: '100vh',
+        minHeight: '90vh',
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'row',
@@ -21,7 +21,7 @@ const List = ({ items }) => {
             <ProductCardContainer key={item.id} item={item} />
           );
         }) : arr.map((elemento) => (
-          <Stack spacing={1} key={elemento}>
+          <Stack margin={10} spacing={1} key={elemento}>
             <Skeleton variant="text" sx={{ fontSize: "1rem" }} />
             <Skeleton variant="circular" width={40} height={40} />
             <Skeleton variant="rectangular" width={210} height={60} />

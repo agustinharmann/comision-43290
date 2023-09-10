@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { db } from '../../../firebaseConfig'
 import { addDoc, collection } from '@firebase/firestore'
 import { products } from '../../../productsMock'
@@ -15,8 +15,17 @@ const Dashboard = () => {
   };
 
   return (
-    <>
-      <Box>
+    <Box
+      sx={{
+        minHeight: '100vh',
+      }}
+    >
+      <Box
+        sx={{
+          width: '100%',
+          padding: '20px',
+        }}
+      >
         <Link
           to='/'
         >
@@ -29,18 +38,37 @@ const Dashboard = () => {
             At Home
           </Button>
         </Link>
-        <h1>Ruta para el administrador</h1>
       </Box>
-
-      <Button
-        variant='contained'
-        onClick={rellenar}
-        disabled
+      <Box
+        sx={{
+          width: '100%',
+          padding: '20px',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
       >
-        Rellenar base de datos
-      </Button>
-    </>
-  )
-}
+        <Button
+          variant='contained'
+          onClick={rellenar}
+          disabled
+        >
+          Rellenar base de datos
+        </Button>
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          padding: '20px',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <Typography>
+          (Al loggearse como admin, habría una vista de filas y columnas para ingresar o editar productos).
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
 
 export { Dashboard };

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 
 import { CartContext } from "../../../context/CartContextContainer";
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore";
@@ -10,7 +10,7 @@ import { db } from "../../../firebaseConfig";
 
 const FormFormik = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { cart, getTotalPrice } = useContext(CartContext);
+  const { cart, getTotalPrice, clearCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState("");
 
   let total = getTotalPrice();
@@ -54,7 +54,7 @@ const FormFormik = () => {
   return (
     <div
       style={{
-        minHeight: '80vh',
+        minHeight: '81vh',
         padding: '0px 40px',
         display: 'flex',
         justifyContent: 'center',
@@ -70,7 +70,6 @@ const FormFormik = () => {
             flexDirection: 'column',
           }}
           onSubmit={handleSubmit}
-
         >
           <TextField
             label="Nombre"
@@ -93,6 +92,7 @@ const FormFormik = () => {
             error={errors.email ? true : false}
             helperText={errors.email}
           />
+
           <TextField
             type={showPassword ? "text" : "password"}
             label="Pass"
@@ -102,6 +102,7 @@ const FormFormik = () => {
             error={errors.password ? true : false}
             helperText={errors.password}
           />
+
           <Button type="button" onClick={() => setShowPassword(!showPassword)}>
             Mostrar/ocultar
           </Button>
@@ -110,11 +111,17 @@ const FormFormik = () => {
             sx={{
               margin: "20px 0px"
             }}
+            onClick={clearCart}
             type="submit" variant="contained">
             Enviar
           </Button>
 
-        </form> : <h1>la orden es {orderId}</h1>
+        </form> : <Box textAlign={'center'}>
+          <Typography variant="h5">Has finalizado la compra!</Typography>
+          <Typography>La orden de compra es: <strong style={{ color: 'steelblue' }}>{orderId}</strong></Typography>
+          <br /><br /><br /><br />
+          <Typography variant="h6">Habría un apartado para ver todas las compras realizadas y sus órdenes.</Typography>
+        </Box>
       }
     </div>
   );

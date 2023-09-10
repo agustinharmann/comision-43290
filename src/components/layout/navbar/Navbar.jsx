@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography } from '@mui/material';
+import logoEcommerce from '../../../assets/logoEcommerce.png';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import { MenuContainer } from '../../common/menu/MenuContainer';
 
 const Navbar = () => {
@@ -12,15 +13,30 @@ const Navbar = () => {
           flexDirection: { xs: 'column', sm: 'row' },
           justifyContent: { xs: 'center', sm: 'space-between' }
         }}>
-        <Link to='/'>
-          <Typography variant='h6' component='div'
-            sx={{
-              width: 'auto',
-              padding: '6px 8px'
-            }}>
-            E-commerce
-          </Typography>
-        </Link>
+        <Box sx={{
+          maxWidth: { xs: '200px', md: '130px' },
+          height: 'auto',
+          display: 'flex',
+          alignItems: 'center',
+        }}>
+          <Link
+            to='/'
+            style={{
+              padding: '10px',
+              display: 'flex',
+            }}
+          >
+            <img
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+              }}
+              src={logoEcommerce}
+              alt="Logo footer"
+            />
+          </Link>
+        </Box>
         <MenuContainer />
       </Toolbar>
     </AppBar>

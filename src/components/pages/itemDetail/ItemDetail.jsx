@@ -21,9 +21,12 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
           <Typography variant="h6" style={{ fontWeight: 'bold', marginBottom: '8px' }}>
             Price: ${price}
           </Typography>
-          <Typography variant="body1" style={{ marginBottom: '16px' }}>
+          <Typography variant="body1" style={{ marginBottom: '16px', width: '100%', maxWidth: '600px' }}>
             {description}
           </Typography>
+          {cantidadEnCarrito && <Typography variant="h5" color="textSecondary">
+            Ya tenés {cantidadEnCarrito} unidades en tu carrito.
+          </Typography>}
           <Typography variant="body2" color="textSecondary">
             <strong>Stock</strong>: {stock} units
           </Typography>

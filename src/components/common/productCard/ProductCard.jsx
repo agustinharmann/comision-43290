@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardHeader, CardMedia, CardContent, CardActions } from '@mui/material';
+import { Card, CardHeader, CardMedia, CardContent, CardActions, CardActionArea } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import { BsCart2 } from 'react-icons/bs';
@@ -8,76 +8,59 @@ import { BsCart2 } from 'react-icons/bs';
 const ProductCard = ({ item }) => {
 
   return (
-    <Card
-      sx={{
-        maxWidth: 300,
-        maxHeight: 435,
-        margin: '5px',
-        background: '#1A2027',
-      }}>
-      <CardHeader
+    <Link to={`/itemDetail/${item.id}`}>
+      <Card
         sx={{
-          width: '100%',
-          height: '60px',
-          padding: '10px',
+          minWidth: '300px',
+          maxWidth: '300px',
+          minHeight: '320px',
+          maxHeight: '320px',
+          margin: '10px',
+          border: '1px solid gray'
         }}
-        title={
-          <Typography
+      >
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="200"
+            image={item.image}
+            alt={item.title}
             sx={{
-              width: '100%',
-              maxWidth: '278px',
-              textAlign: 'center',
-              whiteSpace: 'nowrap',
-              textOverflow: 'ellipsis',
-              overflow: 'hidden',
-              color: '#FFFFFF',
+              borderRadius: '0px 0px 2px 2px'
+            }}
+          />
+          <CardContent
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
-            {item.title}
-          </Typography>
-        }
-      />
-
-
-      <CardMedia
-        component='img'
-        height='194'
-        objet-fit='content'
-        image={item.image}
-        alt={item.title}
-      />
-
-      <CardContent
-        sx={{
-          padding: '10px'
-        }}
-      >
-        <Typography
-          variant='body2'
-          color='#FFFFFF'
-          overflow='auto'
-          minHeight='100px'
-          maxHeight='100px'
-          padding='0px 10px'
-        >
-          {item.description}
-        </Typography>
-      </CardContent>
-
-
-      <CardActions
-        sx={{
-          justifyContent: 'flex-end'
-        }}
-      >
-        <Link to={`/itemDetail/${item.id}`}>
-          <Button variant="contained" sx={{display: 'flex', alignItems: 'center'}}>
+            <Typography
+              sx={{
+                width: '100%',
+                maxWidth: '278px',
+                textAlign: 'center',
+                whiteSpace: 'nowrap',
+                textOverflow: 'ellipsis',
+                overflow: 'hidden',
+                margin: '0px',
+              }}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              {item.title}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button variant="contained" sx={{ display: 'flex', alignItems: 'center' }}>
             Ver más
           </Button>
-        </Link>
-      </CardActions>
-
-    </Card>
+        </CardActions>
+      </Card>
+    </Link>
   );
 };
 

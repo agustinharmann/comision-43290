@@ -4,7 +4,7 @@ const CartContext = createContext();
 
 const CartContextContainer = ({ children }) => {
 
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cartCoderHouse")) || []);
 
   const addToCart = (product) => {
     let existe = cart.some((elemento) => elemento.id === product.id);
@@ -20,24 +20,24 @@ const CartContextContainer = ({ children }) => {
         }
       });
 
-      localStorage.setItem("cart", JSON.stringify(newArr))
+      localStorage.setItem("cartCoderHouse", JSON.stringify(newArr))
       setCart(newArr);
 
       setCart(newArr);
     } else {
-      localStorage.setItem("cart", JSON.stringify([...cart, product]))
+      localStorage.setItem("cartCoderHouse", JSON.stringify([...cart, product]))
       setCart([...cart, product]);
     }
   };
 
   const clearCart = () => {
-    localStorage.removeItem("cart")
+    localStorage.removeItem("cartCoderHouse")
     setCart([]);
   };
 
   const deleteById = (id) => {
     let newArr = cart.filter((elemento) => elemento.id !== id);
-    localStorage.setItem("cart", JSON.stringify(newArr))
+    localStorage.setItem("cartCoderHouse", JSON.stringify(newArr))
     setCart(newArr);
   };
 
@@ -54,12 +54,13 @@ const CartContextContainer = ({ children }) => {
     let total = cart.reduce((acc, elemento) => {
       return acc + (elemento.price * elemento.quantity)
     }, 0)
+    total = Math.round(total)
     return total
   }
 
   const getQuantityById = (id) => {
 
-    let producto = cart.find((elemento) => elemento.id === +id)
+    let producto = cart.find((elemento) => elemento.id === id)
 
     return producto?.quantity
   }

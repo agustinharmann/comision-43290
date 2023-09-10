@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { CartContext } from '../../../context/CartContextContainer';
 import Swal from "sweetalert2";
 
@@ -21,7 +21,7 @@ const Cart = () => {
         Swal.fire("Carrito eliminado con exito", "", "success");
       } else if (result.isDenied) {
         Swal.fire("El carrito queda como estaba", "", "info");
-      }
+      };
     });
   };
 
@@ -31,11 +31,11 @@ const Cart = () => {
     <Box
       sx={{
         width: '100%',
-        minHeight: '100vh',
+        minHeight: '91vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-
+        marginBottom: '10px',
       }}
     >
       <h2
@@ -43,61 +43,158 @@ const Cart = () => {
           margin: '20px 10px'
         }}
       >Mi carrito</h2>
-
       <Box
         sx={{
           width: '90%',
           minHeight: '60vh',
           display: 'flex',
-          flexWrap: 'wrap'
+          flexDirection: { xs: 'column', md: 'row' },
+          alignItems: { xs: 'center', md: 'start' },
+          justifyContent: { xs: 'start', md: 'center' },
+          flexWrap: 'wrap',
         }}
       >
-        {cart.map((elemento) => {
-          return (
-            <Box
-              key={elemento.id}
-              sx={{
-                width: "200px",
-                maxHeight: '200px',
-                margin: '10px',
-                padding: '5px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                border: "2px solid steelblue"
-              }}
-            >
-              <h3>{elemento.title}</h3>
-              <h3>{elemento.price}</h3>
-              <h4>Cantidad: {elemento.quantity}</h4>
-              <Button variant="contained" onClick={() => deleteById(elemento.id)}>
-                Eliminar
-              </Button>
-            </Box>
-          );
-        })}
-
-      </Box>
-
-      {cart.length > 0 && (
-        <Box
+        {cart.length > 0 ? (
+          cart.map((elemento) => {
+            return (
+              <Box
+                key={elemento.id}
+                sx={{
+                  width: "250px",
+                  minHeight: '200px',
+                  maxHeight: '200px',
+                  margin: '10px',
+                  padding: '5px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  border: "2px solid steelblue",
+                }}
+              >
+                <Typography
+                  sx={{
+                    width: '100%',
+                    maxWidth: '100%',
+                    padding: '0px 10px',
+                    textAlign: 'center',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    margin: '0px',
+                    fontSize: '24px',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {elemento.title}
+                </Typography>
+                <Typography
+                  sx={{
+                    width: '100%',
+                    maxWidth: '100%',
+                    padding: '0px 10px',
+                    textAlign: 'center',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    margin: '0px',
+                    fontSize: '20px',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  ${elemento.price}
+                </Typography>
+                <Typography
+                  sx={{
+                    width: '100%',
+                    maxWidth: '100%',
+                    padding: '0px 10px',
+                    textAlign: 'center',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    margin: '0px',
+                    fontSize: '20px',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Cantidad: {elemento.quantity}
+                </Typography>
+                <Link
+                  to={`/itemDetail/${elemento.id}`}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Button
+                    variant="outlined"
+                  >
+                    Ver producto
+                  </Button>
+                </Link>
+                <Button
+                  variant="contained"
+                  onClick={() => deleteById(elemento.id)}
+                >
+                  Eliminar
+                </Button>
+              </Box>
+            );
+          })
+        ) : (<Box
           sx={{
             width: '90%',
+            minHeight: '60vh',
             display: 'flex',
-            justifyContent: 'space-between'
+            flexDirection: 'column',
+            alignItems: { xs: 'center', md: 'center' },
+            justifyContent: { xs: 'start', md: 'center' },
           }}
         >
-          <Button variant="outlined" onClick={limpiar}>
-            Limpiar carrito
-          </Button>
-          <Link to='/formik'>
-            <Button variant="outlined">Terminar compra</Button>
+          <Typography>
+            No hay ningún producto en el carrito.
+          </Typography>
+          <Link
+            to='/'
+          >
+            <Typography
+              color={'primary'}
+              sx={{
+                textDecoration: 'underline'
+              }}
+            >
+              Ir a la tienda
+            </Typography>
           </Link>
-        </Box>
-      )}
+        </Box>)}
 
-      <h2>El total del carrito es : {total} </h2>
-    </Box>
+      </Box>
+      {
+        cart.length > 0 && (
+          <Box
+            sx={{
+              width: '90%',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <Button variant="contained" onClick={limpiar}>
+              Limpiar carrito
+            </Button>
+            <Typography
+              textAlign={'center'}
+              fontSize={'20px'}
+            >
+              Total: ${total}
+            </Typography>
+            <Link to='/formik'>
+              <Button variant="contained">Terminar compra</Button>
+            </Link>
+          </Box>
+        )
+      }
+    </Box >
   );
 };
 
