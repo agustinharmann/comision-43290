@@ -19,16 +19,19 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
 
             {product.category ?
               <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-                {product.category}
+                Categoría: {product.category}
               </Typography> : <Typography></Typography>}
 
             {product.image ? <CardMedia style={{ width: 300, height: 300, marginBottom: '16px' }} component="img" alt={product?.title} image={product?.image} /> : <Typography></Typography>}
             <Typography variant="h6" style={{ fontWeight: 'bold', marginBottom: '8px' }}>
-              {product.price ? product.price : <Typography></Typography>}
+              Precio: ${product.price ? product.price : <Typography></Typography>}
             </Typography>
 
             {product.description ?
-              <Typography variant="body1" color="textSecondary" gutterBottom>
+              <Typography variant="body1" sx={{
+                width: '100%',
+                maxWidth: '600px'
+              }} color="textSecondary" gutterBottom>
                 {product.description}
               </Typography> : <Typography></Typography>}
 
