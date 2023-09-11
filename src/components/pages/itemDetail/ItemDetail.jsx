@@ -6,10 +6,11 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
   return (
     <>
       <Card sx={{
-        boxShadow: 'none'
+        boxShadow: 'none',
+        minHeight: '90vh',
       }}>
         <Box>
-          <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '16px' }}>
+          <Box style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '16px' }}>
 
             {product.title ?
               <Typography variant="h4" gutterBottom>
@@ -48,7 +49,6 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
           />
         </Box>
       </Card>
-
     </>
   );
 };
