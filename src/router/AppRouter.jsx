@@ -18,7 +18,7 @@ const AppRouter = () => {
         <Route path="/dashboard" element={<Dashboard />} />
       </Route>
 
-      <Route path="*" element={<Navigate to='/' />} />
+      <Route path="*" element={<h1>404 - Not found</h1>} />
     </Routes>
   );
 };
