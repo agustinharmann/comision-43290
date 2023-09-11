@@ -1,7 +1,6 @@
 import { Box } from '@mui/material';
 import { MenuCategoriesContainer } from '../menuCategories/MenuCategoriesContainer';
 import { UsersInfoContainer } from '../usersInfo/UsersInfoContainer';
-import { CartWidgetContainer } from '../cartWidget/CartWidgetContainer';
 
 
 const Menu = () => {
@@ -22,7 +21,6 @@ const Menu = () => {
         }}
       >
         <UsersInfoContainer />
-        <CartWidgetContainer />
       </Box>
     </Box>
   );

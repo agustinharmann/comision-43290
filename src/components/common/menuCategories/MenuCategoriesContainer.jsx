@@ -2,10 +2,12 @@ import { MenuCategories } from "./MenuCategories"
 import { keyframes } from '@mui/styled-engine';
 import { categories } from '../../../categoriesMock';
 import { useRef, useState } from "react";
+import { CartWidgetContainer } from "../cartWidget/CartWidgetContainer";
+import { Box } from "@mui/material";
 
 
 const MenuCategoriesContainer = () => {
-  
+
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
 
@@ -30,14 +32,19 @@ const MenuCategoriesContainer = () => {
   }`;
 
   return (
-    <MenuCategories
-      anchorRef={anchorRef}
-      open={open}
-      handleToggle={handleToggle}
-      handleClose={handleClose}
-      rotateAnimation={rotateAnimation}
-      categories={categories}
-    />
+    <Box
+      display={'flex'}
+    >
+      <MenuCategories
+        anchorRef={anchorRef}
+        open={open}
+        handleToggle={handleToggle}
+        handleClose={handleClose}
+        rotateAnimation={rotateAnimation}
+        categories={categories}
+      />
+      <CartWidgetContainer />
+    </Box>
   );
 };
 

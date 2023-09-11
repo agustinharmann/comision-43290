@@ -10,26 +10,36 @@ const ItemDetail = ({ product, agregarAlCarrito, cantidadEnCarrito }) => {
       }}>
         <Box>
           <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '16px' }}>
-            <Typography variant="h4" gutterBottom>
-              {product.title ? product.title : <p>Cargando...</p>}
-            </Typography>
-            <Typography variant="subtitle1" color="textSecondary" gutterBottom>
-              {product.category ? product.category : <p>Cargando...</p>}
-            </Typography>
-            {product.image ? <CardMedia style={{ width: 300, height: 300, marginBottom: '16px' }} component="img" alt={product?.title} image={product?.image} /> : <p>Cargando...</p>}
-            {/*  */}
+
+            {product.title ?
+              <Typography variant="h4" gutterBottom>
+                {product.title}
+              </Typography> : <Typography></Typography>}
+
+            {product.category ?
+              <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+                {product.category}
+              </Typography> : <Typography></Typography>}
+
+            {product.image ? <CardMedia style={{ width: 300, height: 300, marginBottom: '16px' }} component="img" alt={product?.title} image={product?.image} /> : <Typography></Typography>}
             <Typography variant="h6" style={{ fontWeight: 'bold', marginBottom: '8px' }}>
-              {product.price ? product.price : <p>Cargando...</p>}
+              {product.price ? product.price : <Typography></Typography>}
             </Typography>
-            <Typography variant="body1" style={{ marginBottom: '16px', width: '100%', maxWidth: '600px' }}>
-              {product.description ? product.description : <p>Cargando...</p>}
-            </Typography>
+
+            {product.description ?
+              <Typography variant="body1" color="textSecondary" gutterBottom>
+                {product.description}
+              </Typography> : <Typography></Typography>}
+
             {cantidadEnCarrito && <Typography variant="h5" color="textSecondary">
               Ya tenés {cantidadEnCarrito} unidades en tu carrito.
             </Typography>}
-            <Typography variant="body2" color="textSecondary">
-              {product.stock ? <p><strong>Stock</strong> : {product.stock} unidades </p> : <p>Cargando...</p>}
-            </Typography>
+
+            {product.stock ?
+              <Typography variant="body1" color="textSecondary" gutterBottom>
+                <strong>Stock</strong> : {product.stock} unidades
+              </Typography> : <Typography></Typography>}
+
           </Box>
           <CounterContainer
             cantidadEnCarrito={cantidadEnCarrito}
