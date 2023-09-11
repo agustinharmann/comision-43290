@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { routes } from "./menuRoutes";
 import { Layout } from '../components/layout/Layout';
 import { ProtectedRoutes } from './ProtectedRoutes';
@@ -18,7 +18,7 @@ const AppRouter = () => {
         <Route path="/dashboard" element={<Dashboard />} />
       </Route>
 
-      <Route path="*" element={<h1>404 - Not found</h1>} />
+      <Route path="/*" element={<Navigate to='/' />} />
     </Routes>
   );
 };
