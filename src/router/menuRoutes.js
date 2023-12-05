@@ -3,6 +3,7 @@ import { ItemDetailContainer } from '../components/pages/itemDetail/ItemDetailCo
 import { CartContainer } from '../components/pages/cart/CartContainer'
 import { CheckoutContainer } from '../components/pages/checkout/CheckoutContainer';
 import { FormFormik } from '../components/pages/formFormik/FormFormik';
+import { ImgComprimirContainer } from '../components/common/imgComprimir/ImgComprimirContainer';
 
 export const routes = [
   {
@@ -34,5 +35,10 @@ export const routes = [
     id: "formik",
     path: "/formik",
     Element: FormFormik,
+  },
+  {
+    id: "imgComprimir",
+    path: "/imgComprimir",
+    Element: ImgComprimirContainer,
   },
 ];
