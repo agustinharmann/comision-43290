@@ -15,5 +15,3 @@ VITE_APPID=1:459020139016:web:57efc807447c8bb6646fbd
 # Proyecto desplegado
 
 https://ecomerce-vite.vercel.app/
-
-
